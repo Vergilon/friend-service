@@ -19,7 +19,7 @@ public class RecommendationController {
     private final RecommendationHandler recommendationHandler;
 
     @GetMapping
-    public List<UserDto> findPotentialFriend(@RequestBody FriendDto dto) {
-        return recommendationHandler.findFriends(dto);
+    public List<UserDto> findPotentialFriends(@RequestBody FriendDto dto) {
+        return recommendationHandler.findFriends(dto.getUserId(), dto.isCity());
     }
 }
